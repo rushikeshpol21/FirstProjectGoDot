@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://World.gd" type="Script" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://enimy.jpg" type="Texture" id=5]
+[ext_resource path="res://wall1.tres" type="TileSet" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 33 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33, 32 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2( 0.7, 0.7 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 2 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.745098, 0.0666667, 0.0666667, 1 )
+self_modulate = Color( 0.619608, 0.156863, 0.156863, 1 )
+position = Vector2( 640.369, 417.087 )
+scale = Vector2( 2.09123, 1.49614 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -3.77548, 16.9897 )
+tile_set = ExtResource( 6 )
+format = 1
+tile_data = PoolIntArray( -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, 6, 0, 0, 15, 0, 0, 65538, 0, 0, 65539, 0, 0, 65542, 0, 0, 65544, 0, 0, 65551, 0, 0, 131072, 0, 0, 131075, 0, 0, 131077, 0, 0, 131078, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131087, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196619, 0, 0, 196623, 0, 0, 262144, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262155, 0, 0, 262159, 0, 0, 327680, 0, 0, 327682, 0, 0, 327685, 0, 0, 327689, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327695, 0, 0, 393216, 0, 0, 393218, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393225, 0, 0, 393227, 0, 0, 393229, 0, 0, 393231, 0, 0, 458752, 0, 0, 458754, 0, 0, 458755, 0, 0, 458759, 0, 0, 458761, 0, 0, 458763, 0, 0, 458765, 0, 0, 458767, 0, 0, 524288, 0, 0, 524291, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+[connection signal="body_shape_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
