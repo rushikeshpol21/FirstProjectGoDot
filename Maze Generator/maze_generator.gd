@@ -5,7 +5,7 @@ export var  MAZE_SIZE = Vector2(31,17)
 export var  MAZE_POS = Vector2(1, 1)
 export var WALL_ID = 0
 export var PATH_ID = 1
-export var LIMIT_ID = 2
+export var LIMIT_ID = 3
 const DIRECTIONS = [
 	Vector2.UP * 2,
 	Vector2.DOWN * 2,
