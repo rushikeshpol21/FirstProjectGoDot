@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://winposition.tres" type="TileSet" id=1]
 [ext_resource path="res://greentile.tres" type="TileSet" id=2]
 [ext_resource path="res://greenbackground.jpg" type="Texture" id=3]
 [ext_resource path="res://level1.gd" type="Script" id=4]
 [ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.21115, 3.15991 )
 
 [node name="Main" type="Node2D"]
 
@@ -13,6 +16,19 @@ position = Vector2( -65.4681, 282.115 )
 scale = Vector2( 1.06024, 0.440358 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="level1"]
+margin_left = 66.9996
+margin_top = -42.3842
+margin_right = 500.0
+margin_bottom = 46.6158
+text = "Start
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="greentile" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -26,4 +42,11 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 2424839, 0, 0 )
 
+[node name="Area2D" type="Area2D" parent="wintile"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wintile/Area2D"]
+position = Vector2( 120.006, 587.927 )
+shape = SubResource( 1 )
+
 [node name="PlayerNode" parent="." instance=ExtResource( 5 )]
+[connection signal="body_entered" from="wintile/Area2D" to="level1" method="_on_Area2D_body_entered"]
