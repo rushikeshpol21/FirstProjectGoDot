@@ -1,17 +1,1 @@
 extends Sprite
-
-func _ready():
-	$Label.hide()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Area2D_body_entered(body):
-	$Label.text = "Win"
-	$Label.show()
-	print("Win")
-	pass # Replace with function body.
