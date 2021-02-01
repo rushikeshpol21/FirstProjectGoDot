@@ -1,5 +1,7 @@
 extends TileMap
 
+signal win
+
 func _ready():
 	$Label.hide()
 
@@ -8,7 +10,8 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
+	emit_signal("win")
 	$Label.text = "You Win !!!!"
 	$Label.show()
 	print("Win")
