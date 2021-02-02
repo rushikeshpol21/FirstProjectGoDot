@@ -15,4 +15,5 @@ func _on_Area2D_body_entered(_body):
 	$Label.show()
 	end_game()
 func end_game():
-	get_tree().quit()
+	get_tree().change_scene("res://Extras/GameWin.tscn")
+	
