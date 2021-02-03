@@ -34,7 +34,7 @@ tile_data = PoolIntArray( -589833, 0, 0, 2424839, 0, 0 )
 [node name="PlayerNode" parent="." instance=ExtResource( 5 )]
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 304, 400 )
+position = Vector2( 306.673, 396.436 )
 
 [node name="StartTimer" type="Timer" parent="."]
 
