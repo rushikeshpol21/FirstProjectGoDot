@@ -36,13 +36,23 @@ tile_data = PoolIntArray( -589833, 0, 0, 2424839, 0, 0 )
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 306.673, 396.436 )
 
+[node name="Enemy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 264, 144 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 88, 336 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 248, 432 )
+
 [node name="StartTimer" type="Timer" parent="."]
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = 140.218
-margin_top = 8.21231
-margin_right = 332.218
-margin_bottom = 63.2123
+margin_left = 160.0
+margin_top = 7.0
+margin_right = 328.0
+margin_bottom = 142.0
+rect_scale = Vector2( 0.99538, 1.01122 )
 custom_fonts/font = SubResource( 1 )
 text = "Start
 "
