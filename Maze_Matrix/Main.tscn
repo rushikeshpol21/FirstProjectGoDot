@@ -35,6 +35,7 @@ tile_data = PoolIntArray( -589833, 0, 0, 2424839, 0, 0 )
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 306.673, 396.436 )
+collision_mask = 0
 
 [node name="Enemy2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 264, 144 )

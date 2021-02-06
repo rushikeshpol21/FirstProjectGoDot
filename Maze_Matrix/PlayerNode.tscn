@@ -613,6 +613,7 @@ parameters/walk/7/blend_position = 0
 parameters/walk/8/blend_position = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
 anims/Hurtleft = SubResource( 22 )
 anims/Hurtright = SubResource( 23 )
 anims/Rundown = SubResource( 24 )

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HomePage/TouchscreenCamera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://greenbackground.jpg" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="greenbackground" type="Sprite" parent="."]
+position = Vector2( -5.50001, -2300.5 )
+scale = Vector2( 0.562963, 2.36068 )
+texture = ExtResource( 2 )
+
+[node name="TouchscreenCamera" parent="." instance=ExtResource( 1 )]
