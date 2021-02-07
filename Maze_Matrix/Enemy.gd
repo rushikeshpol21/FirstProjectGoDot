@@ -1,33 +1,55 @@
 extends KinematicBody2D
 
-var velocity = Vector2(0,1)
-var direction = 1
-const MAX_SPEED = 50
+onready var animationPlayer = $AnimationPlayer
+onready var animationTree = $AnimationTree
+onready var animation_mode = animationTree.get("parameters/playback")
 
 func _ready():
 	pass
 
-func _physics_process(delta):
-	if velocity.x < 0:
-		velocity.x = MAX_SPEED * direction
-	if velocity.x > 0:
-		velocity.x = MAX_SPEED * direction
-	if velocity.y < 0:
-		velocity.y = MAX_SPEED * direction
-	if velocity.y > 0:
-		velocity.y = MAX_SPEED * direction
+enum {
+	IDLE,
+	WANDER
+}
 
-	if direction == 1:
-		$Sprite.flip_v = false
-	else:
-		$Sprite.flip_v = true
+var velocity = Vector2.ZERO
+var state = IDLE
+
+const ACCELERATION = 300
+const MAX_SPEED = 50
+const TOLERANCE = 4.0
+
+onready var start_position = global_position
+onready var target_position = global_position
+
+func update_target_position():
+	var target_vector = Vector2(rand_range(-32, 32), rand_range(-32, 32))
+	target_position = start_position + target_vector
+
+func is_at_target_position(): 
+	# Stop moving when at target +/- tolerance
+	return (target_position - global_position).length() < TOLERANCE
+
+func _physics_process(delta):
+	match state:
+		IDLE:
+			state = WANDER
+			# Maybe wait for X seconds with a timer before moving on
+			update_target_position()
+
+		WANDER:
+			accelerate_to_point(target_position, ACCELERATION * delta)
+
+			if is_at_target_position():
+				state = IDLE
+
 	velocity = move_and_slide(velocity)
 
-	if is_on_wall():
-		direction = direction * -1
-		var random_number = randi() % 4
-		match random_number:
-			0: velocity.x +=1
-			1: velocity.x -=1
-			2: velocity.y +=1
-			3: velocity.y -=1
+func accelerate_to_point(point, acceleration_scalar):
+	var direction = (point - global_position).normalized()
+	var acceleration_vector = direction * acceleration_scalar
+	accelerate(acceleration_vector)
+
+func accelerate(acceleration_vector):
+	velocity += acceleration_vector
+	velocity = velocity.clamped(MAX_SPEED)
