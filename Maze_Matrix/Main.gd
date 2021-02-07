@@ -10,6 +10,7 @@ export var timeFlag := true
 
 # Called when the node enters the scene tree for the first time.
 func _on_Main_ready():
+	$PlayerNode.add_to_group("Player")
 	timerNode.connect("win", self, "_on_wintile_win") 
 	timerNode.set_wait_time(1)
 	timerNode.start()

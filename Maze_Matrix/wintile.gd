@@ -15,4 +15,4 @@ func _on_Area2D_body_entered(_body):
 	$Label.text = "You Win !!!!"
 	$Label.show()
 	print("Win")
-	pass # Replace with function body.
+pass # Replace with function body.
