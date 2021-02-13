@@ -99,7 +99,8 @@ position = Vector2( 128, 115 )
 scale = Vector2( 0.53125, 0.515625 )
 frames = SubResource( 1 )
 animation = "blueflame"
-frame = 1
+frame = 2
+playing = true
 
 [node name="0028" type="Sprite" parent="blueflame"]
 visible = false
@@ -110,12 +111,14 @@ texture = ExtResource( 8 )
 position = Vector2( 81.9999, 81.9999 )
 scale = Vector2( 0.312499, 0.460318 )
 frames = SubResource( 6 )
-frame = 2
+frame = 3
+playing = true
 
 [node name="coin1" type="AnimatedSprite" parent="."]
 position = Vector2( 80.6102, 28.2843 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
+playing = true
 
 [node name="coin2" type="AnimatedSprite" parent="."]
 position = Vector2( 165.463, 128.693 )

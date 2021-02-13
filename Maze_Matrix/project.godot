@@ -30,6 +30,12 @@ window/stretch/aspect="keep"
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_physics/layer_1="Enemy"
+2d_physics/layer_2="PlayerNode"
+2d_physics/layer_3="wintile"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
