@@ -4,7 +4,7 @@ const MAX_SPEED = 100
 const FRICTION =  500
 var velocity = Vector2.ZERO
 #var Mainsceen = preload("res://Main.tscn")
-onready var animationPlayer = $"../AnimationPlayer"
+#onready var animationPlayer = $"../AnimationPlayer"
 onready var animationTree = $AnimationTree
 #onready var animation_mode = animationTree.get("parameters/playback")
 
