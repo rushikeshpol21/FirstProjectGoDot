@@ -12,11 +12,16 @@ var tile_size = 32  # tile size (in pixels)
 var width = 15  # width of map (in tiles)
 var height = 22  # height of map (in tiles)
 
+var map_seed = 0
 # get a reference to the map for convenience
 onready var Map = $TileMap
 
 func _ready():
 	randomize()
+	if !map_seed:
+		map_seed = randi()
+	seed(map_seed)
+	print(map_seed)
 	tile_size = Map.cell_size
 	make_maze()
 	
