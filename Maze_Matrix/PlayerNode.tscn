@@ -5,7 +5,6 @@
 [ext_resource path="res://Analog.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 10.0691
 height = 0.0
 
 [sub_resource type="AnimationNodeAnimation" id=2]
@@ -565,8 +564,8 @@ collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 6.0104, -5.12653 )
-scale = Vector2( 0.291421, 0.210312 )
+position = Vector2( 12, -1.62502 )
+scale = Vector2( 0.282353, 0.169118 )
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 24
@@ -574,7 +573,7 @@ frame = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
-position = Vector2( 5.30328, 6.36395 )
+position = Vector2( 11.182, 5.52509 )
 scale = Vector2( 0.5, 0.7 )
 shape = SubResource( 1 )
 
