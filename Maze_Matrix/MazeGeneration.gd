@@ -55,4 +55,4 @@ func make_maze():
 			unvisited.erase(current)
 		elif stack:
 			current = stack.pop_back()
-		yield(get_tree(), 'idle_frame')
+		#yield(get_tree(), 'idle_frame')
