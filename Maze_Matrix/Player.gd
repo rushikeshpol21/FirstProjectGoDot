@@ -13,7 +13,7 @@ func _physics_process(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
-	
+
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/idle/blend_position", input_vector)
 		animationTree.set("parameters/walk/blend_position", input_vector)
@@ -22,14 +22,25 @@ func _physics_process(delta):
 	else:
 		#animation_mode.travel("idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-		
+
 	velocity = move_and_slide(velocity)		
+
+
+
+const MAXSPEED = 2
+var Move = Vector2()
+
+func _process(delta):
+	var Analog = $CanvasLayer/Analog
+	#on analog schene weare add formula 90-rad2deg(TouchPos.angle_to_point(position))
+	# then if we are want to give them back to Radian just add this formual Radian = (Angle - 90)*-1
+	 
+	Move = Vector2(cos(-deg2rad(Analog.Angle-90)),sin(-deg2rad(Analog.Angle-90)))*Analog.Strength*MAXSPEED
 	
-func _ready():
+	rotation = deg2rad(-Analog.Angle)
+	
+	move_and_collide(Move)
 	pass
-
-
-
 
 
 
