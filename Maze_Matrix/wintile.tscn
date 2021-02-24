@@ -14,11 +14,13 @@ font_data = ExtResource( 3 )
 [node name="wintile" type="TileMap"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
+collision_mask = 2
 format = 1
 tile_data = PoolIntArray( 2424839, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 120.122, 589.897 )
