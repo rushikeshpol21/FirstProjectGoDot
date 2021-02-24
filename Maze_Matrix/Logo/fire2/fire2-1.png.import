@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spike D.png-b046f292128ce2e3977951a28b01b6b8.stex"
+path="res://.import/fire2-1.png-5ddbac38221dcc1a28981ca29eec7800.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Logo/Spikes/spike D.png"
-dest_files=[ "res://.import/spike D.png-b046f292128ce2e3977951a28b01b6b8.stex" ]
+source_file="res://Logo/fire2/fire2-1.png"
+dest_files=[ "res://.import/fire2-1.png-5ddbac38221dcc1a28981ca29eec7800.stex" ]
 
 [params]
 
