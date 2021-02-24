@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://wintile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://greentile.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Main.gd" type="Script" id=7]
+[ext_resource path="res://Hazards/Spike.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -58,6 +59,11 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Spike" parent="Node" instance=ExtResource( 8 )]
+position = Vector2( 415.309, 306.185 )
 [connection signal="ready" from="." to="." method="_on_Main_ready"]
 [connection signal="win" from="wintile" to="." method="_on_wintile_win"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
