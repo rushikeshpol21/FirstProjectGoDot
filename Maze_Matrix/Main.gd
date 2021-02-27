@@ -15,7 +15,7 @@ func _on_Main_ready():
 	timerNode.connect("win", self, "_on_wintile_win") 
 	timerNode.set_wait_time(1)
 	timerNode.start()
-	pass # Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,7 +26,7 @@ func _on_StartTimer_timeout():
 	if timeFlag == true:
 		time +=1
 		$TimeLabel.text = String(time)
-		print(time)
+#		print(time)
 		$TimeLabel.show()
 	else:
 		print("Stop timer")

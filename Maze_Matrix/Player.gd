@@ -5,7 +5,7 @@ const FRICTION =  500
 var velocity = Vector2.ZERO
 #var Mainsceen = preload("res://Main.tscn")
 #onready var animationPlayer = $"../AnimationPlayer"
-onready var animationTree = $AnimationTree
+#onready var animationTree = $AnimationTree
 #onready var animation_mode = animationTree.get("parameters/playback")
 
 func _physics_process(delta):
@@ -15,8 +15,8 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 
 	if input_vector != Vector2.ZERO:
-		animationTree.set("parameters/idle/blend_position", input_vector)
-		animationTree.set("parameters/walk/blend_position", input_vector)
+#		animationTree.set("parameters/idle/blend_position", input_vector)
+#		animationTree.set("parameters/walk/blend_position", input_vector)
 		#animation_mode.travel("walk")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * FRICTION)
 	else:
