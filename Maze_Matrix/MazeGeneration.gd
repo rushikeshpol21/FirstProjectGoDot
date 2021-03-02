@@ -12,7 +12,7 @@ var tile_size = 32  # tile size (in pixels)
 var width = 15  # width of map (in tiles)
 var height = 22  # height of map (in tiles)
 
-var map_seed = 0
+var map_seed = 3735502711
 # get a reference to the map for convenience
 onready var Map = $TileMap
 

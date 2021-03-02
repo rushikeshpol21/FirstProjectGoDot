@@ -31,3 +31,8 @@ func _physics_process(delta):
 			1: velocity.x -=1
 			2: velocity.y +=1
 			3: velocity.y -=1
+
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.name.begins_with('Player'):
+			print("Player hit enemy")

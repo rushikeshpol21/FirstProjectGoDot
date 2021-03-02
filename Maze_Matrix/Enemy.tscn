@@ -3,9 +3,6 @@
 [ext_resource path="res://Logo/Enemy/Slime_Medium_Orange.png" type="Texture" id=1]
 [ext_resource path="res://Enemy.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 7.00446
-
 [sub_resource type="Animation" id=2]
 resource_name = "down"
 length = 0.4
@@ -191,25 +188,13 @@ start_node = "idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.00446
+
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 360, 136 )
 collision_mask = 2
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-vframes = 4
-hframes = 4
-frame = 8
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/down = SubResource( 2 )
@@ -228,3 +213,12 @@ active = true
 parameters/playback = SubResource( 23 )
 parameters/idle/blend_position = Vector2( 0.0873239, -0.5 )
 parameters/walk/blend_position = Vector2( 0.135211, -0.525862 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 4
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

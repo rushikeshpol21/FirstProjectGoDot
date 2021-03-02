@@ -4,12 +4,11 @@
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Analog.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 14.7408
 height = 7.37109
 
-[sub_resource type="Animation" id=1]
-resource_name = "Downwalk"
+[sub_resource type="Animation" id=2]
 length = 0.4
 step = 0.2
 tracks/0/type = "value"
@@ -25,8 +24,7 @@ tracks/0/keys = {
 "values": [ 6, 14 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Idledown"
+[sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -41,8 +39,7 @@ tracks/0/keys = {
 "values": [ 2 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Idleleft"
+[sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -57,8 +54,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Idleright"
+[sub_resource type="Animation" id=5]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -73,8 +69,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Idleup"
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -89,8 +84,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Leftwalk"
+[sub_resource type="Animation" id=7]
 length = 0.4
 step = 0.2
 tracks/0/type = "value"
@@ -106,8 +100,7 @@ tracks/0/keys = {
 "values": [ 5, 13 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "Rightwalk"
+[sub_resource type="Animation" id=8]
 length = 0.4
 step = 0.2
 tracks/0/type = "value"
@@ -123,8 +116,7 @@ tracks/0/keys = {
 "values": [ 7, 15 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "Upwalk"
+[sub_resource type="Animation" id=9]
 length = 0.4
 step = 0.2
 tracks/0/type = "value"
@@ -154,18 +146,18 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.47485, 1.76776 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Analog" parent="CanvasLayer" instance=ExtResource( 3 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Downwalk = SubResource( 1 )
-anims/Idledown = SubResource( 2 )
-anims/Idleleft = SubResource( 3 )
-anims/Idleright = SubResource( 4 )
-anims/Idleup = SubResource( 5 )
-anims/Leftwalk = SubResource( 6 )
-anims/Rightwalk = SubResource( 7 )
-anims/Upwalk = SubResource( 8 )
+anims/Downwalk = SubResource( 2 )
+anims/Idledown = SubResource( 3 )
+anims/Idleleft = SubResource( 4 )
+anims/Idleright = SubResource( 5 )
+anims/Idleup = SubResource( 6 )
+anims/Leftwalk = SubResource( 7 )
+anims/Rightwalk = SubResource( 8 )
+anims/Upwalk = SubResource( 9 )

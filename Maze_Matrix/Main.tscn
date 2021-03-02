@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://wintile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://greentile.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Main.gd" type="Script" id=7]
 [ext_resource path="res://Hazards/fire.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Hazards/WatchmanSlime.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -42,10 +43,6 @@ collision_layer = 2147483649
 [node name="Enemy2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 355.216, 323.558 )
 
-[node name="Enemy3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 353.594, 292.92 )
-collision_layer = 2147483649
-
 [node name="StartTimer" type="Timer" parent="."]
 
 [node name="TimeLabel" type="Label" parent="."]
@@ -65,6 +62,8 @@ __meta__ = {
 [node name="fire" parent="." instance=ExtResource( 8 )]
 position = Vector2( 389.494, 314.289 )
 scale = Vector2( 0.191497, 0.376751 )
+
+[node name="WatchmanSlime" parent="." instance=ExtResource( 9 )]
+position = Vector2( 112.632, 100.925 )
 [connection signal="ready" from="." to="." method="_on_Main_ready"]
 [connection signal="win" from="wintile" to="." method="_on_wintile_win"]
-[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

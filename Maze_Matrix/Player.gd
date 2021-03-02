@@ -1,6 +1,6 @@
 extends KinematicBody2D
 const ACCELERATION = 100
-const MAX_SPEED = 100
+const MAX_SPEED = 70
 const FRICTION =  500
 var velocity = Vector2.ZERO
 #var Mainsceen = preload("res://Main.tscn")
