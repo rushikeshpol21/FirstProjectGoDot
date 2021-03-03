@@ -7,6 +7,7 @@ export var speed = 200
 # at which distance to stop moving
 # NOTE: setting this value too low might result in jerky movement near destination
 const eps = 1.5
+
 #var enemyposition = Vector2()
 var goal=Vector2()
 # points in the path
@@ -27,13 +28,13 @@ func _physics_process(delta):
 		if distance.length() > eps or points.size() > 2:
 			set_linear_velocity(direction*speed)
 		else:
-			position.x = 10.81
-			position.y = 19
+			position.x = 399
+			position.y = 352
 #			set_linear_velocity(Vector2(0, 0)) # close enough - stop moving
 		update() # we update the node so it has to draw it self again
 
-func _draw():
-	# if there are points to draw
-	if points.size() > 1:
-		for p in points:
-			draw_circle(p - get_global_position(), 8, Color(1, 0, 0)) # we draw a circle (convert to global position first)
+#func _draw():
+#	# if there are points to draw
+#	if points.size() > 1:
+#		for p in points:
+#			draw_circle(p - get_global_position(), 8, Color(1, 0, 0)) # we draw a circle (convert to global position first)

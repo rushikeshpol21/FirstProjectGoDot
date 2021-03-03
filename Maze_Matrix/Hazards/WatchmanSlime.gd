@@ -8,6 +8,7 @@ func _physics_process(delta):
 	if player != null:
 		move = position.direction_to((player.position) * speed)
 	else:
+		$Sprite.play("idle")
 #		move = position.direction_to((Vector2(48,37)) * speed)
 		move = Vector2.ZERO
 	move = move.normalized()
